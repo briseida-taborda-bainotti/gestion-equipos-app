@@ -1,0 +1,11 @@
+import api from './api.js';
+export const getSolicitudes   = (params) => api.get('/solicitudes', { params });
+export const getSolicitud     = (id)     => api.get(`/solicitudes/${id}`);
+export const getHistorial     = (id)     => api.get(`/solicitudes/${id}/historial`);
+export const createSolicitud  = (data)   => api.post('/solicitudes', data);
+export const updateSolicitud  = (id, data) => api.put(`/solicitudes/${id}`, data);
+export const cancelarSolicitud = (id)   => api.patch(`/solicitudes/${id}/cancelar`);
+export const aprobarSolicitud  = (id)   => api.patch(`/solicitudes/${id}/aprobar`);
+export const rechazarSolicitud = (id)   => api.patch(`/solicitudes/${id}/rechazar`);
+export const devolverSolicitud = (id)   => api.patch(`/solicitudes/${id}/devolver`);
+export const getResumen        = ()     => api.get('/solicitudes/resumen');
